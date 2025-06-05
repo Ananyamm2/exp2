@@ -1,0 +1,22 @@
+mvn archetype:generate -DgroupId=com.example -DartifactId=myapp -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+  java -cp target/myapp-1.0-SNAPSHOT.jar com.exmaple.App
+
+  plugins {
+    id 'java'
+}
+
+group ='com.example'
+version ='1.0-SNAPSHOT'
+
+repositories {
+   mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+}
+
+task run(type:JavaExec) {
+main='com.example.App'
+classpath=sourceSets.main.runtimeClasspath
+}
